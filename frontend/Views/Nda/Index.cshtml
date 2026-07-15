@@ -1,0 +1,105 @@
+@model NdaFormModel
+@{
+    ViewData["Title"] = "Create a Mutual NDA";
+    var template = (NdaTemplate)ViewBag.Template;
+    string? Help(string key) => template.Variables.FirstOrDefault(v => v.Key == key)?.Description;
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-9">
+        <h1 class="h3 mb-1">@template.Name</h1>
+        <p class="text-muted">@template.Description</p>
+
+        <form asp-action="Preview" method="post" novalidate>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="card mb-3">
+                <div class="card-header fw-semibold">Agreement</div>
+                <div class="card-body row g-3">
+                    <div class="col-md-4">
+                        <label asp-for="EffectiveDate" class="form-label"></label>
+                        <input asp-for="EffectiveDate" type="date" class="form-control" />
+                        <span asp-validation-for="EffectiveDate" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="TermMonths" class="form-label"></label>
+                        <input asp-for="TermMonths" type="number" min="1" class="form-control" />
+                        <div class="form-text">@Help("term_months")</div>
+                        <span asp-validation-for="TermMonths" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="ConfidentialityPeriodMonths" class="form-label"></label>
+                        <input asp-for="ConfidentialityPeriodMonths" type="number" min="1" class="form-control" />
+                        <div class="form-text">@Help("confidentiality_period_months")</div>
+                        <span asp-validation-for="ConfidentialityPeriodMonths" class="text-danger small"></span>
+                    </div>
+                    <div class="col-12">
+                        <label asp-for="Purpose" class="form-label"></label>
+                        <textarea asp-for="Purpose" rows="2" class="form-control"></textarea>
+                        <div class="form-text">@Help("purpose")</div>
+                        <span asp-validation-for="Purpose" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="GoverningLaw" class="form-label"></label>
+                        <input asp-for="GoverningLaw" class="form-control" />
+                        <span asp-validation-for="GoverningLaw" class="text-danger small"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header fw-semibold">Party 1</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label asp-for="Party1Name" class="form-label"></label>
+                                <input asp-for="Party1Name" class="form-control" />
+                                <span asp-validation-for="Party1Name" class="text-danger small"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Party1EntityType" class="form-label"></label>
+                                <input asp-for="Party1EntityType" class="form-control" placeholder="e.g. Delaware corporation" />
+                            </div>
+                            <div>
+                                <label asp-for="Party1Address" class="form-label"></label>
+                                <textarea asp-for="Party1Address" rows="2" class="form-control"></textarea>
+                                <span asp-validation-for="Party1Address" class="text-danger small"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-header fw-semibold">Party 2</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label asp-for="Party2Name" class="form-label"></label>
+                                <input asp-for="Party2Name" class="form-control" />
+                                <span asp-validation-for="Party2Name" class="text-danger small"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Party2EntityType" class="form-label"></label>
+                                <input asp-for="Party2EntityType" class="form-control" placeholder="e.g. Delaware corporation" />
+                            </div>
+                            <div>
+                                <label asp-for="Party2Address" class="form-label"></label>
+                                <textarea asp-for="Party2Address" rows="2" class="form-control"></textarea>
+                                <span asp-validation-for="Party2Address" class="text-danger small"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+                <button type="submit" class="btn btn-primary">Preview NDA</button>
+                <button type="reset" class="btn btn-outline-secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

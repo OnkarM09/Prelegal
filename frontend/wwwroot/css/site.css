@@ -1,0 +1,31 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Rendered legal document */
+.document {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+}
+
+.document h2,
+.document h3 {
+    font-family: Georgia, "Times New Roman", serif;
+}
