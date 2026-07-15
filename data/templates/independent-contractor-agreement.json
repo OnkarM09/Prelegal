@@ -1,0 +1,70 @@
+{
+  "id": "independent-contractor-agreement",
+  "name": "Independent Contractor Agreement",
+  "category": "Services",
+  "version": "1.0",
+  "jurisdiction": "Generic",
+  "description": "Engages an independent contractor to perform services for a client, covering scope, fees, IP ownership, and termination.",
+  "source": { "name": "Prelegal", "url": "" },
+  "license": "CC BY 4.0",
+  "variables": [
+    { "key": "effective_date", "label": "Effective Date", "type": "date", "required": true },
+    { "key": "client_name", "label": "Client Name", "type": "text", "required": true },
+    { "key": "client_address", "label": "Client Address", "type": "textarea", "required": true },
+    { "key": "contractor_name", "label": "Contractor Name", "type": "text", "required": true },
+    { "key": "contractor_address", "label": "Contractor Address", "type": "textarea", "required": true },
+    { "key": "services_description", "label": "Description of Services", "type": "textarea", "required": true, "description": "The work the contractor will perform." },
+    { "key": "fee_amount", "label": "Fee Amount", "type": "currency", "required": true, "description": "Compensation payable to the contractor." },
+    { "key": "fee_basis", "label": "Fee Basis", "type": "select", "required": true, "options": ["per hour", "per project", "per month"], "default": "per project" },
+    { "key": "payment_terms_days", "label": "Payment Terms (days)", "type": "number", "required": true, "description": "Net payment period after invoice.", "default": 30 },
+    { "key": "termination_notice_days", "label": "Termination Notice (days)", "type": "number", "required": true, "default": 14 },
+    { "key": "governing_law", "label": "Governing Law", "type": "text", "required": true, "default": "State of Delaware" }
+  ],
+  "sections": [
+    {
+      "id": "parties",
+      "heading": "Parties",
+      "body": "This Independent Contractor Agreement (the \"Agreement\") is made as of {{effective_date}} between {{client_name}}, located at {{client_address}} (the \"Client\"), and {{contractor_name}}, located at {{contractor_address}} (the \"Contractor\")."
+    },
+    {
+      "id": "services",
+      "heading": "1. Services",
+      "body": "The Contractor will provide the following services (the \"Services\"): {{services_description}}. The Contractor will perform the Services in a professional and workmanlike manner."
+    },
+    {
+      "id": "compensation",
+      "heading": "2. Compensation",
+      "body": "The Client will pay the Contractor {{fee_amount}} {{fee_basis}} for the Services. The Contractor will invoice the Client, and payment is due within {{payment_terms_days}} days of the invoice date."
+    },
+    {
+      "id": "relationship",
+      "heading": "3. Independent Contractor Relationship",
+      "body": "The Contractor is an independent contractor and not an employee, partner, or agent of the Client. The Contractor is responsible for its own taxes, insurance, and benefits, and has no authority to bind the Client."
+    },
+    {
+      "id": "ip",
+      "heading": "4. Intellectual Property",
+      "body": "All work product created by the Contractor in performing the Services is the sole property of the Client upon full payment. The Contractor assigns to the Client all right, title, and interest in such work product and will execute documents reasonably necessary to perfect that assignment."
+    },
+    {
+      "id": "confidentiality",
+      "heading": "5. Confidentiality",
+      "body": "The Contractor will keep the Client's non-public information confidential and use it only to perform the Services, both during and after the term of this Agreement."
+    },
+    {
+      "id": "term-termination",
+      "heading": "6. Term and Termination",
+      "body": "This Agreement begins on the Effective Date and continues until the Services are complete, unless terminated earlier. Either Party may terminate this Agreement on {{termination_notice_days}} days' written notice. The Client will pay for Services properly performed through the termination date."
+    },
+    {
+      "id": "governing-law",
+      "heading": "7. Governing Law",
+      "body": "This Agreement is governed by the laws of the {{governing_law}}, without regard to its conflict-of-laws principles."
+    },
+    {
+      "id": "signatures",
+      "heading": "8. Signatures",
+      "body": "Client: {{client_name}}\nBy: ____________________  Title: ____________________  Date: ____________________\n\nContractor: {{contractor_name}}\nBy: ____________________  Title: ____________________  Date: ____________________"
+    }
+  ]
+}

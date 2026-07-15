@@ -1,0 +1,78 @@
+{
+  "id": "mutual-nda",
+  "name": "Mutual Non-Disclosure Agreement (MNDA)",
+  "category": "Confidentiality",
+  "version": "1.0",
+  "jurisdiction": "United States",
+  "description": "A two-way NDA where both parties disclose and receive confidential information. Based on the Common Paper MNDA Cover Page + Standard Terms model.",
+  "source": {
+    "name": "Common Paper",
+    "url": "https://commonpaper.com/standards/mutual-NDA/1.0"
+  },
+  "license": "CC BY 4.0",
+  "variables": [
+    { "key": "effective_date", "label": "Effective Date", "type": "date", "required": true, "description": "Date the agreement takes effect." },
+    { "key": "party_1_name", "label": "Party 1 Legal Name", "type": "text", "required": true, "description": "Full legal name of the first party." },
+    { "key": "party_1_entity_type", "label": "Party 1 Entity Type", "type": "text", "required": false, "description": "e.g. Delaware corporation, LLC.", "default": "corporation" },
+    { "key": "party_1_address", "label": "Party 1 Address", "type": "textarea", "required": true, "description": "Registered/business address of the first party." },
+    { "key": "party_2_name", "label": "Party 2 Legal Name", "type": "text", "required": true, "description": "Full legal name of the second party." },
+    { "key": "party_2_entity_type", "label": "Party 2 Entity Type", "type": "text", "required": false, "description": "e.g. Delaware corporation, LLC.", "default": "corporation" },
+    { "key": "party_2_address", "label": "Party 2 Address", "type": "textarea", "required": true, "description": "Registered/business address of the second party." },
+    { "key": "purpose", "label": "Purpose", "type": "textarea", "required": true, "description": "The business purpose for which confidential information is shared.", "default": "evaluating or pursuing a potential business relationship between the parties" },
+    { "key": "term_months", "label": "Agreement Term (months)", "type": "number", "required": true, "description": "How long the agreement remains in effect.", "default": 24 },
+    { "key": "confidentiality_period_months", "label": "Confidentiality Period (months)", "type": "number", "required": true, "description": "How long confidentiality obligations survive after disclosure.", "default": 24 },
+    { "key": "governing_law", "label": "Governing Law", "type": "text", "required": true, "description": "State/country whose law governs the agreement.", "default": "State of Delaware" }
+  ],
+  "sections": [
+    {
+      "id": "parties",
+      "heading": "Parties",
+      "body": "This Mutual Non-Disclosure Agreement (the \"Agreement\") is entered into as of {{effective_date}} (the \"Effective Date\") by and between {{party_1_name}}, a {{party_1_entity_type}} located at {{party_1_address}}, and {{party_2_name}}, a {{party_2_entity_type}} located at {{party_2_address}} (each a \"Party\" and together the \"Parties\")."
+    },
+    {
+      "id": "purpose",
+      "heading": "1. Purpose",
+      "body": "The Parties wish to explore {{purpose}} (the \"Purpose\"). In connection with the Purpose, each Party may disclose to the other certain confidential and proprietary information."
+    },
+    {
+      "id": "confidential-information",
+      "heading": "2. Confidential Information",
+      "body": "\"Confidential Information\" means any non-public information disclosed by one Party (the \"Discloser\") to the other Party (the \"Recipient\"), whether orally, in writing, or in any other form, that is designated as confidential or that reasonably should be understood to be confidential given its nature and the circumstances of disclosure. Confidential Information does not include information that: (a) is or becomes public through no fault of the Recipient; (b) was known to the Recipient without restriction before disclosure; (c) is rightfully obtained by the Recipient from a third party without restriction; or (d) is independently developed by the Recipient without use of the Discloser's Confidential Information."
+    },
+    {
+      "id": "obligations",
+      "heading": "3. Obligations",
+      "body": "The Recipient will (a) use the Discloser's Confidential Information solely for the Purpose, (b) protect it using at least the same degree of care it uses for its own confidential information (and no less than reasonable care), and (c) not disclose it to any third party except to its employees, advisors, and agents who need to know it for the Purpose and are bound by confidentiality obligations at least as protective as those in this Agreement."
+    },
+    {
+      "id": "compelled-disclosure",
+      "heading": "4. Compelled Disclosure",
+      "body": "The Recipient may disclose Confidential Information if required by law, regulation, or court order, provided that (where legally permitted) it gives the Discloser prompt notice and reasonable cooperation to seek protective treatment."
+    },
+    {
+      "id": "term",
+      "heading": "5. Term and Survival",
+      "body": "This Agreement begins on the Effective Date and continues for {{term_months}} months unless earlier terminated by either Party on written notice. The Recipient's confidentiality obligations survive for {{confidentiality_period_months}} months after each disclosure of Confidential Information."
+    },
+    {
+      "id": "return",
+      "heading": "6. Return or Destruction",
+      "body": "Upon the Discloser's written request or termination of this Agreement, the Recipient will promptly return or destroy all Confidential Information in its possession, except copies retained for legal or compliance purposes, which remain subject to this Agreement."
+    },
+    {
+      "id": "no-license",
+      "heading": "7. No License or Warranty",
+      "body": "No license or other right to any intellectual property is granted under this Agreement. All Confidential Information is provided \"as is\" without warranty of any kind."
+    },
+    {
+      "id": "governing-law",
+      "heading": "8. Governing Law",
+      "body": "This Agreement is governed by the laws of the {{governing_law}}, without regard to its conflict-of-laws principles."
+    },
+    {
+      "id": "signatures",
+      "heading": "9. Signatures",
+      "body": "IN WITNESS WHEREOF, the Parties have executed this Agreement as of the Effective Date.\n\n{{party_1_name}}\nBy: ____________________  Name: ____________________  Title: ____________________  Date: ____________________\n\n{{party_2_name}}\nBy: ____________________  Name: ____________________  Title: ____________________  Date: ____________________"
+    }
+  ]
+}

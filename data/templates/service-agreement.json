@@ -1,0 +1,74 @@
+{
+  "id": "service-agreement",
+  "name": "Master Services Agreement (MSA)",
+  "category": "Services",
+  "version": "1.0",
+  "jurisdiction": "Generic",
+  "description": "A master services agreement between a provider and a customer that governs one or more statements of work.",
+  "source": { "name": "Prelegal", "url": "" },
+  "license": "CC BY 4.0",
+  "variables": [
+    { "key": "effective_date", "label": "Effective Date", "type": "date", "required": true },
+    { "key": "provider_name", "label": "Provider Name", "type": "text", "required": true },
+    { "key": "provider_address", "label": "Provider Address", "type": "textarea", "required": true },
+    { "key": "customer_name", "label": "Customer Name", "type": "text", "required": true },
+    { "key": "customer_address", "label": "Customer Address", "type": "textarea", "required": true },
+    { "key": "services_summary", "label": "Services Summary", "type": "textarea", "required": true, "description": "High-level description of the services covered." },
+    { "key": "payment_terms_days", "label": "Payment Terms (days)", "type": "number", "required": true, "default": 30 },
+    { "key": "liability_cap_basis", "label": "Liability Cap Basis", "type": "text", "required": true, "default": "the fees paid in the 12 months preceding the claim" },
+    { "key": "term_months", "label": "Initial Term (months)", "type": "number", "required": true, "default": 12 },
+    { "key": "governing_law", "label": "Governing Law", "type": "text", "required": true, "default": "State of Delaware" }
+  ],
+  "sections": [
+    {
+      "id": "parties",
+      "heading": "Parties",
+      "body": "This Master Services Agreement (the \"Agreement\") is entered into as of {{effective_date}} between {{provider_name}}, located at {{provider_address}} (the \"Provider\"), and {{customer_name}}, located at {{customer_address}} (the \"Customer\")."
+    },
+    {
+      "id": "services",
+      "heading": "1. Services",
+      "body": "The Provider will perform the services described in one or more statements of work (each, an \"SOW\") executed under this Agreement. The general scope is: {{services_summary}}. Each SOW is incorporated into and governed by this Agreement."
+    },
+    {
+      "id": "fees",
+      "heading": "2. Fees and Payment",
+      "body": "The Customer will pay the fees set out in each SOW. Undisputed invoices are payable within {{payment_terms_days}} days of the invoice date. Late amounts may accrue interest at the lower of 1.5% per month or the maximum rate permitted by law."
+    },
+    {
+      "id": "ip",
+      "heading": "3. Intellectual Property",
+      "body": "Each Party retains ownership of its pre-existing intellectual property. Unless an SOW states otherwise, deliverables created specifically for the Customer become the Customer's property upon full payment, excluding the Provider's pre-existing and general-purpose tools and know-how."
+    },
+    {
+      "id": "confidentiality",
+      "heading": "4. Confidentiality",
+      "body": "Each Party will protect the other's Confidential Information with at least reasonable care and use it only to perform or receive the services under this Agreement."
+    },
+    {
+      "id": "warranties",
+      "heading": "5. Warranties and Disclaimer",
+      "body": "The Provider warrants that the services will be performed in a professional and workmanlike manner. Except as expressly stated, the services are provided \"as is\" and all other warranties are disclaimed to the extent permitted by law."
+    },
+    {
+      "id": "liability",
+      "heading": "6. Limitation of Liability",
+      "body": "Neither Party is liable for indirect, incidental, or consequential damages. Except for confidentiality breaches and indemnification obligations, each Party's total liability is limited to {{liability_cap_basis}}."
+    },
+    {
+      "id": "term-termination",
+      "heading": "7. Term and Termination",
+      "body": "This Agreement begins on the Effective Date and continues for an initial term of {{term_months}} months, renewing automatically unless either Party gives written notice of non-renewal. Either Party may terminate for material breach that remains uncured 30 days after written notice."
+    },
+    {
+      "id": "governing-law",
+      "heading": "8. Governing Law",
+      "body": "This Agreement is governed by the laws of the {{governing_law}}, without regard to its conflict-of-laws principles."
+    },
+    {
+      "id": "signatures",
+      "heading": "9. Signatures",
+      "body": "Provider: {{provider_name}}\nBy: ____________________  Title: ____________________  Date: ____________________\n\nCustomer: {{customer_name}}\nBy: ____________________  Title: ____________________  Date: ____________________"
+    }
+  ]
+}
