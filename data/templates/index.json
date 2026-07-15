@@ -1,0 +1,47 @@
+{
+  "schema": "schema.json",
+  "version": "1.0",
+  "count": 5,
+  "templates": [
+    {
+      "id": "mutual-nda",
+      "name": "Mutual Non-Disclosure Agreement (MNDA)",
+      "category": "Confidentiality",
+      "version": "1.0",
+      "jurisdiction": "United States",
+      "file": "mutual-nda.json"
+    },
+    {
+      "id": "unilateral-nda",
+      "name": "One-Way (Unilateral) Non-Disclosure Agreement",
+      "category": "Confidentiality",
+      "version": "1.0",
+      "jurisdiction": "Generic",
+      "file": "unilateral-nda.json"
+    },
+    {
+      "id": "independent-contractor-agreement",
+      "name": "Independent Contractor Agreement",
+      "category": "Services",
+      "version": "1.0",
+      "jurisdiction": "Generic",
+      "file": "independent-contractor-agreement.json"
+    },
+    {
+      "id": "service-agreement",
+      "name": "Master Services Agreement (MSA)",
+      "category": "Services",
+      "version": "1.0",
+      "jurisdiction": "Generic",
+      "file": "service-agreement.json"
+    },
+    {
+      "id": "employment-offer-letter",
+      "name": "Employment Offer Letter",
+      "category": "Employment",
+      "version": "1.0",
+      "jurisdiction": "United States",
+      "file": "employment-offer-letter.json"
+    }
+  ]
+}

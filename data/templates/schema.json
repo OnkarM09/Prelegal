@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://prelegal/data/templates/schema.json",
+  "title": "Legal Document Template",
+  "description": "Schema for a legal document template the system can programmatically fill and modify for a user. Placeholders in section bodies use {{variable_key}} syntax and map to entries in the variables array.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "category", "version", "license", "variables", "sections"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable, unique, kebab-case identifier for the template.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": { "type": "string", "description": "Human-readable template name." },
+    "category": {
+      "type": "string",
+      "description": "Grouping used for browsing/filtering.",
+      "enum": ["Confidentiality", "Employment", "Services", "Sales", "Real Estate", "General"]
+    },
+    "version": { "type": "string", "description": "Template version, e.g. 1.0." },
+    "jurisdiction": {
+      "type": "string",
+      "description": "Primary legal jurisdiction the template is drafted for (ISO country/region code or name). Use 'Generic' when not tied to one."
+    },
+    "description": { "type": "string", "description": "Short summary of when to use this template." },
+    "source": {
+      "type": "object",
+      "description": "Provenance of the template text.",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "license": { "type": "string", "description": "License under which the template text is distributed." },
+    "variables": {
+      "type": "array",
+      "description": "Fields the system fills or lets the user modify. Each key maps to {{key}} placeholders in the sections.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "label", "type", "required"],
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Placeholder key referenced as {{key}} in section bodies.",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "label": { "type": "string", "description": "UI label shown to the user." },
+          "type": {
+            "type": "string",
+            "description": "Input/data type used to render and validate the field.",
+            "enum": ["text", "textarea", "date", "number", "currency", "email", "select", "boolean"]
+          },
+          "required": { "type": "boolean" },
+          "description": { "type": "string", "description": "Help text explaining the field." },
+          "default": { "description": "Optional default value used when the user leaves the field blank." },
+          "options": {
+            "type": "array",
+            "description": "Allowed values for a select field.",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "Ordered document body. Bodies may embed {{variable_key}} placeholders.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "heading", "body"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+          "heading": { "type": "string" },
+          "body": { "type": "string", "description": "Section text with optional {{variable_key}} placeholders." }
+        }
+      }
+    }
+  }
+}

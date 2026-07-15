@@ -1,0 +1,57 @@
+{
+  "id": "unilateral-nda",
+  "name": "One-Way (Unilateral) Non-Disclosure Agreement",
+  "category": "Confidentiality",
+  "version": "1.0",
+  "jurisdiction": "Generic",
+  "description": "A one-directional NDA where a single Disclosing Party shares confidential information with a Receiving Party.",
+  "source": { "name": "Prelegal", "url": "https://commonpaper.com/standards/mutual-NDA/1.0" },
+  "license": "CC BY 4.0",
+  "variables": [
+    { "key": "effective_date", "label": "Effective Date", "type": "date", "required": true, "description": "Date the agreement takes effect." },
+    { "key": "disclosing_party_name", "label": "Disclosing Party Name", "type": "text", "required": true, "description": "The party sharing confidential information." },
+    { "key": "disclosing_party_address", "label": "Disclosing Party Address", "type": "textarea", "required": true },
+    { "key": "receiving_party_name", "label": "Receiving Party Name", "type": "text", "required": true, "description": "The party receiving confidential information." },
+    { "key": "receiving_party_address", "label": "Receiving Party Address", "type": "textarea", "required": true },
+    { "key": "purpose", "label": "Purpose", "type": "textarea", "required": true, "default": "evaluating a potential business relationship" },
+    { "key": "confidentiality_period_months", "label": "Confidentiality Period (months)", "type": "number", "required": true, "default": 36 },
+    { "key": "governing_law", "label": "Governing Law", "type": "text", "required": true, "default": "State of Delaware" }
+  ],
+  "sections": [
+    {
+      "id": "parties",
+      "heading": "Parties",
+      "body": "This One-Way Non-Disclosure Agreement (the \"Agreement\") is entered into as of {{effective_date}} between {{disclosing_party_name}}, located at {{disclosing_party_address}} (the \"Disclosing Party\"), and {{receiving_party_name}}, located at {{receiving_party_address}} (the \"Receiving Party\")."
+    },
+    {
+      "id": "purpose",
+      "heading": "1. Purpose",
+      "body": "The Disclosing Party will share certain Confidential Information with the Receiving Party for the purpose of {{purpose}} (the \"Purpose\")."
+    },
+    {
+      "id": "confidential-information",
+      "heading": "2. Confidential Information",
+      "body": "\"Confidential Information\" means any non-public information disclosed by the Disclosing Party that is marked confidential or that reasonably should be understood to be confidential. It excludes information that is public through no fault of the Receiving Party, was already known to the Receiving Party without restriction, is rightfully received from a third party, or is independently developed without use of the Confidential Information."
+    },
+    {
+      "id": "obligations",
+      "heading": "3. Obligations of the Receiving Party",
+      "body": "The Receiving Party will use the Confidential Information only for the Purpose, protect it with at least reasonable care, and not disclose it to third parties except to personnel and advisors who need to know it for the Purpose and are bound by confidentiality obligations at least as protective as this Agreement."
+    },
+    {
+      "id": "term",
+      "heading": "4. Confidentiality Period",
+      "body": "The Receiving Party's obligations under this Agreement survive for {{confidentiality_period_months}} months following each disclosure of Confidential Information."
+    },
+    {
+      "id": "governing-law",
+      "heading": "5. Governing Law",
+      "body": "This Agreement is governed by the laws of the {{governing_law}}, without regard to its conflict-of-laws principles."
+    },
+    {
+      "id": "signatures",
+      "heading": "6. Signatures",
+      "body": "Disclosing Party: {{disclosing_party_name}}\nBy: ____________________  Title: ____________________  Date: ____________________\n\nReceiving Party: {{receiving_party_name}}\nBy: ____________________  Title: ____________________  Date: ____________________"
+    }
+  ]
+}

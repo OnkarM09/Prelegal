@@ -1,0 +1,65 @@
+{
+  "id": "employment-offer-letter",
+  "name": "Employment Offer Letter",
+  "category": "Employment",
+  "version": "1.0",
+  "jurisdiction": "United States",
+  "description": "An at-will employment offer letter stating position, compensation, start date, and standard conditions of employment.",
+  "source": { "name": "Prelegal", "url": "" },
+  "license": "CC BY 4.0",
+  "variables": [
+    { "key": "letter_date", "label": "Letter Date", "type": "date", "required": true },
+    { "key": "company_name", "label": "Company Name", "type": "text", "required": true },
+    { "key": "company_address", "label": "Company Address", "type": "textarea", "required": true },
+    { "key": "candidate_name", "label": "Candidate Name", "type": "text", "required": true },
+    { "key": "job_title", "label": "Job Title", "type": "text", "required": true },
+    { "key": "manager_title", "label": "Reports To (Title)", "type": "text", "required": false, "default": "your manager" },
+    { "key": "employment_type", "label": "Employment Type", "type": "select", "required": true, "options": ["full-time", "part-time"], "default": "full-time" },
+    { "key": "start_date", "label": "Start Date", "type": "date", "required": true },
+    { "key": "annual_salary", "label": "Annual Salary", "type": "currency", "required": true },
+    { "key": "pay_frequency", "label": "Pay Frequency", "type": "select", "required": true, "options": ["monthly", "semi-monthly", "bi-weekly"], "default": "bi-weekly" },
+    { "key": "governing_law", "label": "Governing Law", "type": "text", "required": true, "default": "State of California" }
+  ],
+  "sections": [
+    {
+      "id": "header",
+      "heading": "Header",
+      "body": "{{company_name}}\n{{company_address}}\n\n{{letter_date}}\n\nDear {{candidate_name}},"
+    },
+    {
+      "id": "offer",
+      "heading": "1. Offer of Employment",
+      "body": "We are pleased to offer you the position of {{job_title}} at {{company_name}} on a {{employment_type}} basis, reporting to {{manager_title}}. Your anticipated start date is {{start_date}}."
+    },
+    {
+      "id": "compensation",
+      "heading": "2. Compensation",
+      "body": "Your annual base salary will be {{annual_salary}}, paid {{pay_frequency}}, subject to standard payroll deductions and withholdings. Your compensation will be reviewed periodically in accordance with company policy."
+    },
+    {
+      "id": "benefits",
+      "heading": "3. Benefits",
+      "body": "You will be eligible to participate in the Company's standard benefit programs, subject to the terms and eligibility requirements of each plan, which the Company may modify from time to time."
+    },
+    {
+      "id": "at-will",
+      "heading": "4. At-Will Employment",
+      "body": "Your employment with {{company_name}} is \"at will,\" meaning that either you or the Company may terminate the employment relationship at any time, with or without cause and with or without notice. This letter does not constitute a contract of employment for any specific period."
+    },
+    {
+      "id": "conditions",
+      "heading": "5. Conditions",
+      "body": "This offer is contingent upon your ability to provide proof of eligibility to work, completion of any required background checks, and your signing of the Company's confidentiality and invention assignment agreement."
+    },
+    {
+      "id": "governing-law",
+      "heading": "6. Governing Law",
+      "body": "This offer and your employment are governed by the laws of the {{governing_law}}."
+    },
+    {
+      "id": "acceptance",
+      "heading": "7. Acceptance",
+      "body": "To accept this offer, please sign and return this letter. We look forward to welcoming you to the team.\n\nSincerely,\n\n{{company_name}}\nBy: ____________________  Title: ____________________\n\nAccepted by:\n{{candidate_name}}\nSignature: ____________________  Date: ____________________"
+    }
+  ]
+}
