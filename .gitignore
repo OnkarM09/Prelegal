@@ -1,0 +1,149 @@
+## ==============================================================
+## .gitignore for ASP.NET Core MVC + jQuery/JavaScript web app
+## ==============================================================
+
+## ----- Build results -----
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Ll]og/
+[Ll]ogs/
+
+## ----- Visual Studio / Rider / VS Code -----
+.vs/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.rsuser
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+## ----- ASP.NET Core -----
+project.lock.json
+project.fragment.lock.json
+artifacts/
+appsettings.*.local.json
+appsettings.Development.json
+secrets.json
+*.mdf
+*.ldf
+*.ndf
+
+## ----- User secrets / environment -----
+.env
+.env.*
+*.pfx
+*.publishsettings
+PublishScripts/
+*.azurePubxml
+*.pubxml
+*.pubxml.user
+
+## ----- NuGet -----
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+.nuget/
+
+## ----- Entity Framework -----
+*.edmx.diagram
+
+## ----- Test / coverage -----
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.coverage
+*.coveragexml
+coverage/
+*.trx
+TestResults/
+BenchmarkDotNet.Artifacts/
+
+## ----- Node / npm / front-end tooling -----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm/
+.yarn/
+.pnp.*
+package-lock.json.bak
+
+## ----- Bundled / minified build output (uncomment if generated) -----
+# wwwroot/dist/
+# wwwroot/lib/
+
+## ----- Front-end build tools cache -----
+.sass-cache/
+*.css.map
+*.js.map
+.parcel-cache/
+.cache/
+
+## ----- OS files -----
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.stackdump
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## ----- Misc -----
+*.bak
+*.cache
+*.orig
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+node_modules.bak/
